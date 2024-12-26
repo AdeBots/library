@@ -25,8 +25,8 @@ function createBook(bookData, index){
     removeBtn.classList.add("removeBtn");
 
     bookTitle.innerText = bookData.title;
-    bookAuthor.innerText = bookData.author;
-    bookNoOfPages.innerText = bookData.noOfPages;
+    bookAuthor.innerText = "By: " + bookData.author;
+    bookNoOfPages.innerText = bookData.noOfPages + " pages";
     bookReadStatus.innerText = bookData.readStatus;
     removeBtn.innerText = "Remove Book"
 
@@ -97,6 +97,13 @@ addBook.addEventListener("click", (event) => {
     event.preventDefault();
     addBookToLibrary();
     dialog.close();
+})
+
+const cancel = document.querySelector(".cancelOperation");
+cancel.addEventListener("click", (event) => {
+    event.preventDefault();
+    dialog.close();
+    clearInputs();
 })
 
 
