@@ -10,3 +10,34 @@
     width: 250px;
     height: 500px;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    width: 300px;
+
+}
+
+form label{
+    font-weight: bold;
+}
+form>div{
+    display: flex;
+    justify-content: space-between;
+}
+
+form button{
+    color: white;
+    width: fit-content;
+    padding: 5px 10px;
+    border: none;
+}
+
+form button.addBook {
+    background-color: green;
+}
+
+form button.cancelOperation {
+    background-color: red;
+}
