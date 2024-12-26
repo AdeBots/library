@@ -13,19 +13,30 @@
     </div>
     <dialog>
         <form action="">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title">
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author">
-            <label for="noOfPages">No. of Pages</label>
-            <input type="number" id="noOfPages" name="noOfPages">
-            <label for="readStatus">Has it been read?</label>
-            <select name="readStatus" id="readStatus">
-                <option value="read">Read</option>
-                <option value="still reading">Still Reading</option>
-                <option value="not read">Not Read</option>
-            </select>
-            <button class="addBook">Add Book</button>
+            <div>
+                <label for="title">Title:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div>
+                <label for="author">Author:</label>
+                <input type="text" id="author" name="author">
+            </div>
+            <div>
+                <label for="noOfPages">No. of Pages:</label>
+                <input type="number" id="noOfPages" name="noOfPages">
+            </div>
+            <div>
+                <label for="readStatus">Has it been read?</label>
+                <select name="readStatus" id="readStatus">
+                    <option value="Read">Read</option>
+                    <option value="Still reading">Still Reading</option>
+                    <option value="Not read">Not Read</option>
+                </select>
+            </div>
+            <div>
+                <button class="addBook">Add Book</button>
+                <button class="cancelOperation">Cancel</button>
+            </div>
         </form>
     </dialog>
     <button class="addNewBook"> + </button>
