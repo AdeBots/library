@@ -11,6 +11,23 @@
     <div class="library">
 
     </div>
+    <dialog>
+        <form action="">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+            <label for="noOfPages">No. of Pages</label>
+            <input type="number" id="noOfPages" name="noOfPages">
+            <label for="readStatus">Has it been read?</label>
+            <select name="readStatus" id="readStatus">
+                <option value="read">Read</option>
+                <option value="still reading">Still Reading</option>
+                <option value="not read" selected >Not Read</option>
+            </select>
+            <button class="AddBook">Add Book</button>
+        </form>
+    </dialog>
     <button class="addNewBook"> + </button>
 </body>
 </html>
