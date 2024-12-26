@@ -1,3 +1,15 @@
+body{
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+}
+
+.addBtn {
+    display: flex;
+    justify-content: end;    
+}
 
 .library {
     display: flex;
@@ -8,33 +20,45 @@
 
 .book {
     width: 250px;
-    height: 500px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
+.book .title {
+    font-size: 2em;
+    font-weight: bold;
+}
+.book .author
+.book .noOfPages
+.book .readStatus
+.book .removeBtn
 
 form {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
     width: 300px;
-
 }
 
 form label{
     font-weight: bold;
 }
+
 form>div{
     display: flex;
     justify-content: space-between;
 }
 
-form button{
+form button, button{
     color: white;
     width: fit-content;
     padding: 5px 10px;
     border: none;
 }
 
-form button.addBook {
+form button.addBook, button.addNewBook {
     background-color: green;
 }
 
