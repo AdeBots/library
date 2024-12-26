@@ -19,11 +19,28 @@ function Book(title, author, noOfPages, readStatus) {
 
 const book1 = new Book("Iron Man", "Steve Rogers", 185, "read");
 const book2 = new Book("Captain America", "Tony Stark", 124, "not read");
-myLibrary.push(book1);
-myLibrary.push(book2);
+myLibrary.push(book1, book2);
+
+const library = document.querySelector(".library");
+
 for (let i = 0; i < myLibrary.length; i++) {
-    console.log(myLibrary[i].title);
-    console.log(myLibrary[i].author);
-    console.log(myLibrary[i].noOfPages);
-    console.log(myLibrary[i].readStatus);
+    const book = document.createElement("div");
+    const bookTitle = document.createElement("p");
+    const bookAuthor = document.createElement("p");
+    const bookNoOfPages = document.createElement("p");
+    const bookReadStatus = document.createElement("p");
+    book.classList.add("book");
+    bookTitle.classList.add("title");
+    bookAuthor.classList.add("author");
+    bookNoOfPages.classList.add("noOfPages");
+    bookReadStatus.classList.add("readStatus");
+    book.appendChild(bookTitle);
+    book.appendChild(bookAuthor);
+    book.appendChild(bookNoOfPages);
+    book.appendChild(bookReadStatus);
+    library.appendChild(book);
+    bookTitle.innerText = myLibrary[i].title;
+    bookAuthor.innerText = myLibrary[i].author;
+    bookNoOfPages.innerText = myLibrary[i].noOfPages;
+    bookReadStatus.innerText = myLibrary[i].readStatus;
 }
