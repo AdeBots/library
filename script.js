@@ -7,6 +7,12 @@ function Book(title, author, noOfPages, readStatus) {
     this.readStatus = readStatus;
 }
 
+const addBookBtn = document.querySelector(".addNewBook");
+
+const dialog = document.querySelector("dialog");
+addBookBtn.addEventListener("click", () => {
+    dialog.showModal();
+});
 // function addBookToLibrary() {
 //     const title;
 //     const author;
