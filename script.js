@@ -15,30 +15,34 @@ function createBook(bookData, index){
     const bookAuthor = document.createElement("p");
     const bookNoOfPages = document.createElement("p");
     const bookReadStatus = document.createElement("p");
+    const readNow= document.createElement("button");
+    const stillReading= document.createElement("button");
     const removeBtn = document.createElement("button");
-    const changeReadStatus= document.createElement("button");
 
     book.classList.add("book");
     bookTitle.classList.add("title");
     bookAuthor.classList.add("author");
     bookNoOfPages.classList.add("noOfPages");
     bookReadStatus.classList.add("readStatus");
+    readNow.classList.add("readNow");
+    stillReading.classList.add("stillReading");
     removeBtn.classList.add("removeBtn");
-    changeReadStatus.classList.add("changeReadStatus");
 
     bookTitle.innerText = bookData.title;
     bookAuthor.innerText = "By: " + bookData.author;
     bookNoOfPages.innerText = bookData.noOfPages + " pages";
     bookReadStatus.innerText = bookData.readStatus;
+    readNow.innerText = "Read";
+    stillReading.innerText = "Still Reading";
     removeBtn.innerText = "Remove Book";
-    changeReadStatus.innerText = "Change Read Status";
 
     book.appendChild(bookTitle);
     book.appendChild(bookAuthor);
     book.appendChild(bookNoOfPages);
     book.appendChild(bookReadStatus);
+    book.appendChild(readNow);
+    book.appendChild(stillReading);
     book.appendChild(removeBtn);
-    book.appendChild(changeReadStatus)
 
     book.setAttribute('data-index', index);
 
@@ -46,10 +50,29 @@ function createBook(bookData, index){
         removeBookFromLibrary(index);
     })
     
-    changeReadStatus.addEventListener("click", () => {
-        changeReadStatus();
+    readNow.addEventListener("click", () =>{
+        readBook(index);
     })
+
+    stillReading.addEventListener("click", () =>{
+        stillReadingBook(index);
+    })
+
     return book;    
+}
+
+function readBook(index){
+    myLibrary[index].readStatus = "Read";
+    const bookElement = document.querySelector(`.book[data-index='${index}']`);
+    const readStatus = bookElement.querySelector(".readStatus");
+    readStatus.innerText = myLibrary[index].readStatus;
+}
+
+function stillReadingBook(index){
+    myLibrary[index].readStatus = "Still Reading";
+    const bookElement = document.querySelector(`.book[data-index='${index}']`);
+    const readStatus = bookElement.querySelector(".readStatus");
+    readStatus.innerText = myLibrary[index].readStatus;
 }
 
 function removeBookFromLibrary(index) {
