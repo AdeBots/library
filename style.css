@@ -20,20 +20,31 @@ h1 {
 
 .book {
     width: 250px;
-    height: 250px;
+    height: 350px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
+    row-gap: 1em;
     align-items: center;
+    border: 3px solid goldenrod;
 }
 
 .book .title {
     font-size: 2em;
+    margin: 0;
     font-weight: bold;
 }
-.book .author 
-.book .noOfPages
-.book .readStatus
-.book .removeBtn
+.book .author {
+    font-size: 1.5em;
+    margin: 0;
+}
+.book .noOfPages{
+    margin: 0;
+}
+.book .readStatus{
+    margin: 0;
+}
+
 
 form {
     display: flex;
@@ -62,6 +73,6 @@ form button.addBook, button.addNewBook {
     background-color: green;
 }
 
-form button.cancelOperation {
+form button.cancelOperation, .book .removeBtn {
     background-color: red;
 }
