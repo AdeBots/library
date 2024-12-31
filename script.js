@@ -16,6 +16,7 @@ function createBook(bookData, index){
     const bookNoOfPages = document.createElement("p");
     const bookReadStatus = document.createElement("p");
     const removeBtn = document.createElement("button");
+    const changeReadStatus= document.createElement("button");
 
     book.classList.add("book");
     bookTitle.classList.add("title");
@@ -23,18 +24,21 @@ function createBook(bookData, index){
     bookNoOfPages.classList.add("noOfPages");
     bookReadStatus.classList.add("readStatus");
     removeBtn.classList.add("removeBtn");
+    changeReadStatus.classList.add("changeReadStatus");
 
     bookTitle.innerText = bookData.title;
     bookAuthor.innerText = "By: " + bookData.author;
     bookNoOfPages.innerText = bookData.noOfPages + " pages";
     bookReadStatus.innerText = bookData.readStatus;
-    removeBtn.innerText = "Remove Book"
+    removeBtn.innerText = "Remove Book";
+    changeReadStatus.innerText = "Change Read Status";
 
     book.appendChild(bookTitle);
     book.appendChild(bookAuthor);
     book.appendChild(bookNoOfPages);
     book.appendChild(bookReadStatus);
     book.appendChild(removeBtn);
+    book.appendChild(changeReadStatus)
 
     book.setAttribute('data-index', index);
 
@@ -42,6 +46,9 @@ function createBook(bookData, index){
         removeBookFromLibrary(index);
     })
     
+    changeReadStatus.addEventListener("click", () => {
+        changeReadStatus();
+    })
     return book;    
 }
 
